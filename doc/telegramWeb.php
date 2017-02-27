@@ -6,4 +6,4 @@
  * Time: 2:10 PM
  */
 $output=file_get_contents('php://input');
-file_put_contents("doc/logs.txt",$output);
+file_put_contents("doc/logs.txt",'vseo huinea');

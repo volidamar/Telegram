@@ -2,6 +2,7 @@
     
     require_once("Main.php");
     require_once("doc/Database.php");
+    require_once ("doc/Database.php");
 
    //$filePath = 'https://api.telegram.org/bot323490435:AAH6qUwCEZ_01FWYJ3mYp585fDUrbtz4tKw/getupdates';
     $filePath='https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/getupdates';

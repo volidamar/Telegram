@@ -5,5 +5,4 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-$x=array(1,2,3);
-print_r($x);
+file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=222985371&text=pret Serii");

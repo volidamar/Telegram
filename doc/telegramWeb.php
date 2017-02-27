@@ -5,4 +5,7 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=222985371&text=pret Serii");
+$output = json_decode(file_get_contents('php://input'),true);
+$id = $output['message']['chat']['id'];
+file_get_contents("https://api.telegram.org/bot272967076:AAFnC6WbVpExcWWoSXf1TUTE1WlnRiyKLrQ/sendMessage?chat_id=".$id."&text=i can see you");
+file_put_contents("doc/logs.txt",$id);

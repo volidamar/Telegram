@@ -6,7 +6,7 @@
  * Time: 2:10 PM
  */
 
-$output = json_decode(file_get_contents('php://input'),true);
+$output = file_get_contents('php://input');
 
 
 file_put_contents("logs.txt",$output);

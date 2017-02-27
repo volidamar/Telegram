@@ -11,7 +11,7 @@
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
-if($outpu['message']['text']==='checkin'){
+if($output['message']['text']==='checkin'){
 file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=".$id."&text=dasdasdasdasdasdasd");
 }
   file_put_contents("logs.txt",$id);

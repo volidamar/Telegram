@@ -7,7 +7,7 @@
  */
 
 $output = json_decode(file_get_contents('php://input'),true);
-$id = $output['message']['chat']['id'];
-file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=".$id."&text=i can see you");
-file_put_contents("logs.txt",$id);
-print_r($output);
+
+
+file_put_contents("logs.txt",$output);
+

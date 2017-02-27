@@ -7,7 +7,7 @@
  */
 
 $output = file_get_contents('php://input');
-file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);
+file_put_contents("message.txt",$output);
 $json = json_decode("message.txt", true);
 print_r($json);
 $output = json_decode(file_get_contents('php://input'),true);

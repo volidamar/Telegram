@@ -7,8 +7,8 @@
  */
 
 $output = file_get_contents('php://input');
-file_put_contents("logs.txt",$output,FILE_APPEND | LOCK_EX);
- $json = json_decode("logs.txt", true);
+file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);
+ $json = json_decode("message.txt", true);
 print_r($json);
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
@@ -18,4 +18,4 @@ file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZ
 }
   //file_put_contents("logs.txt",$id);
 
-echo 123;
+

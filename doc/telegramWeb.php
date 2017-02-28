@@ -16,10 +16,10 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 //file_put_contents("logs.txt",$id);
+ if($output['message']['text']==='checkin'){
 sendMessage($token,$id,$firstName);
+  }
 function sendMessage($token,$id,$firstName)
 {
- if($output['message']['text']==='checkin'){
     file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");
-}   
 }

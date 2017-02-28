@@ -27,7 +27,7 @@ switch($message){
         break;
     case 'how are you?':
         $message='i am fine';
-        sendMessage($token,$id,$message.KeyboardMenu());
+        sendMessage($token,$id,$message);
         break;
     default:
         $message='What are you say?';

@@ -20,9 +20,9 @@ $firstName=$output['message']['from']['first_name'];
  if($output['message']['text']==='checkin'){
 sendMessage($token,$id,$firstName);
   }
-function sendMessage($token,$id,$message)
+function sendMessage($token,$id,$firstName)
 {
-    file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=".$firstName);
+   file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");
 }
 function KeyboardMenu()
 {

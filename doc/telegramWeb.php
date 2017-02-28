@@ -15,24 +15,14 @@ $token='376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8';
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
-switch($message){
- case 'hi':
-  $message='Hello';
- sendMessage($token,$id,$message);
-  break;
-   case 'how are you':
-  $message='i am fine';
-  sendMessage($token,$id,$message.KeyboardMenu());
-  break;
-  
-}
+
  //file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");
- //if($output['message']['text']==='checkin'){
-sendMessage($token,$id,$message);
- // }
+ if($output['message']['text']==='checkin'){
+sendMessage($token,$id,$firstName);
+  }
 function sendMessage($token,$id,$message)
 {
-    file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=". $message);
+    file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=".$firstName);
 }
 function KeyboardMenu()
 {

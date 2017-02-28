@@ -41,6 +41,6 @@ function KeyboardMenu()
                                   'resize_keyboard' => true,
                                   'one_time_keyboard' => false,
                                   'selective' => true]);
- $reply_markup='$reply_markup=' . $keyboard . '';
+ $reply_markup='&reply_markup=' . $keyboard . '';
  return $reply_markup;
 }

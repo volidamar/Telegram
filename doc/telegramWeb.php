@@ -5,7 +5,6 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-
 $output = file_get_contents('php://input');
 $output=$output.',';
 file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);
@@ -17,21 +16,21 @@ $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 switch($message){
- case '/start':
-  $message='dfafadsfafasfasfasfas';
- sendMessage($token,$id,$message);
-  break;
- case 'hi':
-  $message='Hello';
-   sendMessage($token,$id,$message);
-  break;
- case 'how are you?':
-  sendMessage($token,$id,$message.KeybpardMenu());
- default:
-  $message='What are you say?;
-  sendMessage($token,$id,$message);
+    case '/start':
+        $message='dfafadsfafasfasfasfas';
+        sendMessage($token,$id,$message);
+        break;
+    case 'hi':
+        $message='Hello';
+        sendMessage($token,$id,$message);
+        break;
+    case 'how are you?':
+        sendMessage($token,$id,$message.KeybpardMenu());
+    default:
+        $message='What are you say?';
+         sendMessage($token,$id,$message);
 }
-function sendMessage($token,$id,$firstName)
+function sendMessage($token,$id,$message)
 {
  file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=".$message);
 }

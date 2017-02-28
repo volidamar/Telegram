@@ -39,7 +39,7 @@ function sendMessage($token,$id,$message)
 function KeyboardMenu()
 {
          $reply_markup = '';
-    $buttons = [['Generate Insult'],['Language','Homepage']];
+    $buttons = [['checkin','checkout'],['pause','resume']];
     $keyboard = json_encode($keyboard = [
         'keyboard' => $buttons /*[$buttons]*/,
         'resize_keyboard' => true,

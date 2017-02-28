@@ -17,9 +17,11 @@ $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 switch($message){
  case 'hi':
+  $message='Hello';
   sendMessage($token,$id,$message);
   break;
    case 'how are you':
+  $message='i am fine';
   sendMessage($token,$id,$message.KeyBoardMenu());
   break;
  default:

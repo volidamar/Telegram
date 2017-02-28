@@ -40,33 +40,43 @@ class Main
                 "verify_peer_name" => false,
             ),
         );
-        $jsonData = file_get_contents($filePath, false, stream_context_create($arrContextOptions));
-        $json = json_decode($jsonData, true);
-        //file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=222985371&text=pret Serii",false,stream_context_create($arrContextOptions));
+        $js = file_get_contents("https://telegramrus.herokuapp.com/doc/message.txt", false, stream_context_create($arrContextOptions));
+        $t='[';
+$x=']';
+      file_put_contents('doc/logs.txt',$js);
+        $qqq=file_get_contents('doc/logs.txt');
+        $rest = substr($qqq, 0, -1);
+        $rest=$t.$rest.$x;
+        $json=json_decode($rest,true);
+        //print_r($json);
 
+        /*$jsonData = file_get_contents($filePath, false, stream_context_create($arrContextOptions));
+        $json = json_decode($jsonData, true);*/
+        //file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=222985371&text=pret Serii",false,stream_context_create($arrContextOptions));
+        //file_put_contents('doc/logs.txt',$jsonData);
 //print_r($json);
 
-        foreach ($json['result'] as $i => $value) {
-            if (isset($json['result'][$i]['edited_message'])) {
-                $this->editedMessageText[] = $json['result'][$i]['edited_message']['text'];
-                $this->editedMEssageId[] = $json['result'][$i]['edited_message']['message_id'];
-                unset($json['result'][$i]);
+        foreach ($json as $i => $value) {
+            if (isset($json[$i]['edited_message'])) {
+                $this->editedMessageText[] = $json[$i]['edited_message']['text'];
+                $this->editedMEssageId[] = $json[$i]['edited_message']['message_id'];
+                unset($json[$i]);
             }
         }
 //EDIT messaged
 
-        foreach ($json['result'] as $i => $value) {
+        foreach ($json as $i => $value) {
             foreach ($this->editedMEssageId as $g => $value) {
-                if ($json['result'][$i]['message']['message_id'] === $value) {
-                    $json['result'][$i]['message']['text'] = $this->editedMessageText[$g];
+                if ($json[$i]['message']['message_id'] === $value) {
+                    $json[$i]['message']['text'] = $this->editedMessageText[$g];
                 }
             }
         }
 
 
-        foreach ($json['result'] as $i => $value) {
-            if ($json['result'][$i]['message']['text'] == '/start') {
-                unset($json['result'][$i]);
+        foreach ($json as $i => $value) {
+            if ($json[$i]['message']['text'] == '/start') {
+                unset($json[$i]);
             }
         }
 
@@ -74,13 +84,13 @@ class Main
         $db = new Database('127.0.0.1', 'root', 'r00t', 'time_work');
         $messageId = null;
 
-        foreach ($json['result'] as $key => $res) {
+        foreach ($json as $key => $res) {
             $this->splitedByNames[$key] = $res['message']['from']['first_name'];
         }
-        array_multisort($this->splitedByNames, SORT_STRING, $json['result']);
+        array_multisort($this->splitedByNames, SORT_STRING, $json);
         // print_r($this->splitedByNames);echo "<br/>";
 
-        foreach ($json['result'] as $res) {
+        foreach ($json as $res) {
 
             $dataTime = $res['message']['date'];
             $message = $res['message']['text'];
@@ -116,7 +126,7 @@ class Main
                 $d->message($date, $message, $messageId, $firstName, $lastName);
             }
         }
-       // print_r($result);
+       print_r($result);
 
 
             $this->insertInfo($result, $db, $id);

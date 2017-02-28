@@ -15,11 +15,33 @@ $token='376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8';
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
-//file_put_contents("logs.txt",$id);
- if($output['message']['text']==='checkin'){
-sendMessage($token,$id,$firstName);
-  }
-function sendMessage($token,$id,$firstName)
+switch($message){
+ case 'hi':
+  sendMessage($token,$id,$message);
+  break;
+   case 'how are you':
+  sendMessage($token,$id,$message.KeyBoardMenu());
+  break;
+ default:
+  $message='error';
+  sendMessage($token,$id,$message);
+  
+}
+ //file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");
+ //if($output['message']['text']==='checkin'){
+sendMessage($token,$id,$message);
+ // }
+function sendMessage($token,$id,$message)
 {
-    file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");
+    file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=". $message);
+}
+function KeyboardMenu()
+{
+ $buttons=[['checkin']['checkout']];
+ $keyboard=json_encode($keyboard=['keyboard'=>$buttons,
+                                  'resize_keyboard' => true,
+                                  'one_time_keyboard' => false,
+                                  'selective' => true]);
+ $reply_markup='$reply_markup=' . $keyboard . '';
+ return $reply_markup;
 }

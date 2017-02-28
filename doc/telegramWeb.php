@@ -29,9 +29,7 @@ switch($message){
         $message='i am fine';
         sendMessage($token,$id,$message);
         break;
-    default:
-        $message='What are you say?';
-         sendMessage($token,$id,$message);
+ 
 }
 function sendMessage($token,$id,$message)
 {

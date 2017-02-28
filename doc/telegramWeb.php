@@ -18,8 +18,8 @@ $message=$output['message']['text'];
 KeyboardMenu();
 switch($message){
     case '/start':
-        $message='dfafadsfafasfasfasfas';
-        sendMessage($token,$id,$message);
+        $message='HELLO';
+        sendMessage($token,$id,$message.KeyboardMenu());
         break;
     case 'hi':
         $message='Hello';

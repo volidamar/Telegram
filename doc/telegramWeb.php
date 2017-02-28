@@ -19,6 +19,8 @@ $firstName=$output['message']['from']['first_name'];
  //file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");
  if($output['message']['text']==='checkin'){
 sendMessage($token,$id,$firstName);
+  KeyboardMenu();
+  
   }
 function sendMessage($token,$id,$firstName)
 {

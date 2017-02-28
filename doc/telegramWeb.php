@@ -36,11 +36,16 @@ function sendMessage($token,$id,$message)
 }
 function KeyboardMenu()
 {
- $buttons=[['hi'],['how are you?']];
- $keyboard=json_encode($keyboard=['keyboard'=>$buttons,
-                                  'resize_keyboard' => true,
-                                  'one_time_keyboard' => false,
-                                  'selective' => true]);
- $reply_markup='&reply_markup=' . $keyboard . '';
- return $reply_markup;
+         $reply_markup = '';
+    $buttons = [['Generate Insult'],['Language','Homepage']];
+    $keyboard = json_encode($keyboard = [
+        'keyboard' => $buttons /*[$buttons]*/,
+        'resize_keyboard' => true,
+        'one_time_keyboard' => false,
+        'parse_mode' => 'HTML',
+        'selective' => true
+    ]);
+    $reply_markup = '&reply_markup=' . $keyboard . '';
+    
+    return $reply_markup;
 }

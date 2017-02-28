@@ -18,11 +18,11 @@ $firstName=$output['message']['from']['first_name'];
 switch($message){
  case 'hi':
   $message='Hello';
-  sendMessage($token,$id,$message);
+ sendMessage($token,$id,$message);
   break;
    case 'how are you':
   $message='i am fine';
-  sendMessage($token,$id,$message.KeyBoardMenu());
+  sendMessage($token,$id,$message.KeyboardMenu());
   break;
   
 }
@@ -36,7 +36,7 @@ function sendMessage($token,$id,$message)
 }
 function KeyboardMenu()
 {
- $buttons=[['checkin']['checkout']];
+ $buttons=[['checkin'],['checkout']];
  $keyboard=json_encode($keyboard=['keyboard'=>$buttons,
                                   'resize_keyboard' => true,
                                   'one_time_keyboard' => false,

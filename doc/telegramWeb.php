@@ -24,9 +24,6 @@ switch($message){
   $message='i am fine';
   sendMessage($token,$id,$message.KeyBoardMenu());
   break;
- default:
-  $message='error';
-  sendMessage($token,$id,$message);
   
 }
  //file_get_contents("https://api.telegram.org/bot" .$token. "/sendMessage?chat_id=".$id."&text=hi   ".$firstName."-(dolbaeb)");

@@ -133,7 +133,7 @@ $x=']';
             }
         }
         $this->R=$result;
-       print_r($this->R);
+       //print_r($this->R);
 
 
             $this->insertInfo($result, $db, $id);

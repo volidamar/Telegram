@@ -6,7 +6,9 @@
  * Time: 2:10 PM
  */
   require_once("../Main.php");
+
 $lol=new Main();
+$lol=run();
 print_r($lol->R);
 $output = file_get_contents('php://input');
 $output=$output.',';

@@ -22,7 +22,8 @@ switch($message){
         sendMessage($token,$id,$message.KeyboardMenu());
         break;
         case 'keyboard':
-        KeyboardMenu();
+             $message='the keyboard is ready';
+        sendMessage($token,$id,$message.KeyboardMenu());
         break;
     case 'hi':
         $message='Hello';

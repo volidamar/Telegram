@@ -14,3 +14,4 @@ $filePath='https://api.telegram.org/bot329259730:AAEZ-xAi795aQ4BzODtIREBmSurZStD
     file_put_contents("doc/message.txt",$workTime,FILE_APPEND | LOCK_EX);
     $x=file_get_contents("doc/message.txt");
     $un=unserialize($x);
+print_r($un);

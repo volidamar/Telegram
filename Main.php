@@ -153,5 +153,9 @@ $x=']';
             $db->query("INSERT INTO `work_days`(users_id,checkin_time,date,worked_time) VALUE ('$info->messageId','$startInt','$startInt',$info->workTime)");
             }
         }
+    public function getWorkTime()
+    {
+        return $this->R;
+    }
 
 }

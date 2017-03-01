@@ -132,6 +132,7 @@ $x=']';
                 $d->message($date, $message, $messageId, $firstName, $lastName, $messageIdCheckout);
             }
         }
+        
         $this->R=$result;
        print_r($this->R);
 

@@ -23,7 +23,7 @@ class Main
     public $editedMessageText = [];
     public $originalMessage;
     public $qwerty = [];
-
+    public $primer=array(1,2,3,5);
 
 
 
@@ -127,7 +127,7 @@ $x=']';
             }
         }
        print_r($result);
-
+    print_r($this->primer);
 
        
     }

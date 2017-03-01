@@ -55,6 +55,3 @@ function KeyboardMenu()
     
     return $reply_markup;
 }
-require_once("../Main.php");
-$newMain = new Main();
-    $newMain->run($filePath);

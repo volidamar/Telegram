@@ -5,11 +5,8 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-  require_once("../Main.php");
 
-$lol=new Main();
-$lol=run();
-print_r($lol->R);
+
 $output = file_get_contents('php://input');
 $output=$output.',';
 file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);

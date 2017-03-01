@@ -9,4 +9,5 @@
 $filePath='https://api.telegram.org/bot329259730:AAEZ-xAi795aQ4BzODtIREBmSurZStDJYYc/getupdates';
 
     $newMain = new Main();
-    $newMain->run($filePath);
+    //$newMain->run($filePath);
+print_r($newMain->R[1]->workTime);

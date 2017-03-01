@@ -10,6 +10,7 @@
 
     $newMain = new Main();
     $newMain->run($filePath);
+echo 123;
    /*
     $db = new Database('127.0.0.1', 'root', 'r00t', 'time_work');
 

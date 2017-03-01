@@ -55,3 +55,6 @@ function KeyboardMenu()
     
     return $reply_markup;
 }
+ $newMain = new Main();
+    $newMain->run($filePath);
+print_r($newMain->R[1]->workTime);

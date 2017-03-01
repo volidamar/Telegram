@@ -23,6 +23,7 @@ class Main
     public $editedMessageText = [];
     public $originalMessage;
     public $qwerty = [];
+    public $R=[];
 
 
 
@@ -79,10 +80,15 @@ $x=']';
                 unset($json[$i]);
             }
         }
-
+        foreach ($json as $i => $value) {
+            if ($json[$i]['message']['text'] == 'keyboard') {
+                unset($json[$i]);
+            }
+        }
         $result = null;
         $db = new Database('127.0.0.1', 'root', 'r00t', 'time_work');
         $messageId = null;
+        $messageIdCheckout=null;
 
         foreach ($json as $key => $res) {
             $this->splitedByNames[$key] = $res['message']['from']['first_name'];
@@ -105,13 +111,13 @@ $x=']';
             $message = preg_replace($pravilo2, 'Checkout', $message);
             $message = preg_replace($pravilo3, 'pause', $message);
             $message = preg_replace($pravilo4, 'resume', $message);
-            if ($message === 'Checkin') {
-                $messageId = $res['message']['message_id'];
-            }
             $datee = date("d-m-Y H:i:s", $dataTime);
             $date = new DateTime($datee);
             $date->format('Y-m-d H:i:s');
             $pattern = '/(Checkin|\+)/i';
+            
+                $messageIdCheckout=$res['message']['message_id'];
+
             $checkIfPatternExist = preg_match($pattern, $message);
             $r = true;
             if ($r === true) {
@@ -123,10 +129,11 @@ $x=']';
                     }
                     $d = new WorkDay();
                 }
-                $d->message($date, $message, $messageId, $firstName, $lastName);
+                $d->message($date, $message, $messageId, $firstName, $lastName, $messageIdCheckout);
             }
         }
-       print_r($result);
+        $this->R=$result;
+       print_r($this->R);
 
 
             $this->insertInfo($result, $db, $id);

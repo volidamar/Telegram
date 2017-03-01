@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -128,5 +127,23 @@ $x=']';
             }
         }
        print_r($result);
+
+
+            $this->insertInfo($result, $db, $id);
+
+        $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");
+        $db->query("DELETE from `users` WHERE `users`.`id` not in (SELECT id FROM `t_temp`)");
+        $db->disconnect();
     }
+
+    public function insertInfo($result, $db)
+    {
+        foreach ($result as &$info) {
+
+            $startInt = $info->startInterval->format('Y-m-d H:i:s');
+            $db->query("INSERT INTO `users`(user_id,first_name,last_name) VALUE ('$info->messageId','$info->firstName','$info->lastName')");
+            $db->query("INSERT INTO `work_days`(users_id,checkin_time,date,worked_time) VALUE ('$info->messageId','$startInt','$startInt',$info->workTime)");
+            }
+        }
+
 }

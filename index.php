@@ -11,5 +11,6 @@ $filePath='https://api.telegram.org/bot329259730:AAEZ-xAi795aQ4BzODtIREBmSurZStD
     $newMain = new Main();
     $newMain->run($filePath);
     $workTime=serialize($newMain->R);
-    file_put_contents("doc/workTime.txt",$workTime,FILE_APPEND | LOCK_EX);
-    
+    file_put_contents("doc/message.txt",$workTime,FILE_APPEND | LOCK_EX);
+    $x=file_get_contents("doc/message.txt");
+    $un=unserialize($x);

@@ -17,16 +17,19 @@ class WorkDay
     public $messageId;
     public $firstName;
     public $lastName;
+    public  $messageIdCheckout;
+
 
     /** @var  DateTime */
     public $startInterval;
 
-    public function message(DateTime $date, $messages, $messageId, $firstName, $lastName)
+    public function message(DateTime $date, $messages, $messageId, $firstName, $lastName, $messageIdCheckout)
     {
         $this->messages[] = $messages;
         $this->messageId = $messageId;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+$this->messageIdCheckout= $messageIdCheckout;
         $pattern = '/(Checkin|\+|resume)/i';
         $pattern2 = '/(Checkout|\-|pause)/i';
         $y = preg_match($pattern2, $messages);

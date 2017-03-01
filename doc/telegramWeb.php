@@ -5,7 +5,10 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-
+  require_once("../Main.php");
+$main=new Main();
+$main->run();
+print_r($main->R[1]->workTime);
 
 $output = file_get_contents('php://input');
 $output=$output.',';

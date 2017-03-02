@@ -23,23 +23,20 @@ $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
-/*foreach ($newMain->R as $res){
+foreach ($newMain->R as $res){
 
     $data=$res->date;
 
     if($data===$date){
         $wTime=$res->workTime;
         global $wTime;
-        if($output['message']['text']==='checkout'){
-            $message='lol';
-            sendMessage($token,$id,$message);
-        }
+       
     }
 }
-*/
+
 
   if($output['message']['text']==='checkout'){
-            $message='lol';
+            $message=$wTime;
             sendMessage($token,$id,$message);
         }
 

@@ -43,7 +43,7 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-       $message= $firstName;
+       $message= 'poka';
 
        sendMessage($token,$id,$message);
         break;

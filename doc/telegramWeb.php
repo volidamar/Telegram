@@ -30,6 +30,10 @@ foreach ($newMain->R as $res){
     if($data===$date){
         $wTime=$res->workTime;
         global $wTime;
+        if($output==='checkout'){
+            $message=$wTime;
+            sendMessage($token,$id,$message);
+        }
     }
 }
 
@@ -47,11 +51,11 @@ switch($message){
         $message='Hello';
         sendMessage($token,$id,$message);
         break;
-    case 'checkout':
-        $message= $wime;
+   // case 'checkout':
+      //  $message= $wime;
 
-        sendMessage($token,$id,$message);
-        break;
+      //  sendMessage($token,$id,$message);
+      //  break;
     case 'how are you?':
         $message='i am fine';
         sendMessage($token,$id,$message);

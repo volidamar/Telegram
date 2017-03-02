@@ -44,8 +44,8 @@ class Main
         $js = file_get_contents("https://telegramrus.herokuapp.com/doc/message.txt", false, stream_context_create($arrContextOptions));
         $t='[';
 $x=']';
-      file_put_contents('doc/logs.txt',$js);
-        $qqq=file_get_contents('doc/logs.txt');
+      file_put_contents('logs.txt',$js);
+        $qqq=file_get_contents('logs.txt');
         $rest = substr($qqq, 0, -1);
         $rest=$t.$rest.$x;
         $json=json_decode($rest,true);

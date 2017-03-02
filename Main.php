@@ -134,12 +134,8 @@ $x=']';
         }
         
         $this->R=$result;
-      // print_r($this->R);
+       print_r($this->R);
 
-    $workTime=serialize($this->R);
-    file_put_contents("doc/workTime.txt",$workTime,FILE_APPEND | LOCK_EX);
-   
-    
             $this->insertInfo($result, $db, $id);
 
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");

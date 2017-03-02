@@ -60,7 +60,7 @@ function KeyboardMenu()
     return $reply_markup;
 }
 function massiv(){
-require_once("../index.php");
+//require_once("../index.php");
        //$x=file_get_contents("workTime.txt");
     //$un=unserialize($x);
 }

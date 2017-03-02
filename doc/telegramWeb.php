@@ -30,10 +30,7 @@ switch($message){
         $message='Hello';
         sendMessage($token,$id,$message);
         break;
-         case 'checkout':
-        $message='good bye';
-        sendMessage($token,$id,$message.massiv();
-        break;
+    
     case 'how are you?':
         $message='i am fine';
         sendMessage($token,$id,$message);
@@ -59,8 +56,4 @@ function KeyboardMenu()
     
     return $reply_markup;
 }
-function massiv(){
-//require_once("../index.php");
-       //$x=file_get_contents("workTime.txt");
-    //$un=unserialize($x);
-}
+

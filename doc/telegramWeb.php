@@ -39,7 +39,7 @@ switch($message){
         break;
     case 'checkout':
         for($i=0;$i<count($newMain->R);$i++){
-       if($date===$mewMain->R[$i]->date){
+       if($date===$newMain->R[$i]->date){
         $message=$newMain->R[$i]->workTime;
        }
         }

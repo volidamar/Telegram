@@ -33,7 +33,7 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-        $message=10;
+        $message='lol';
         break;
     case 'how are you?':
         $message='i am fine';

@@ -55,7 +55,11 @@ function KeyboardMenu()
     
     return $reply_markup;
 }
-
- $x=file_get_contents("workTime.txt");
-        $un=unserialize($x);
+require_once("../Main.php");
+$newMain=new Main();
+$newMain->run();
+$workTime=serialize($newMain->R);
+file_put_contents("workTime.txt",$workTime,FILE_APPEND | LOCK_EX);
+$x=file_get_contents("workTime.txt");
+ $un=unserialize($x);
  

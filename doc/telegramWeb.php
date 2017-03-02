@@ -40,10 +40,10 @@ switch($message){
     case 'checkout':
         foreach($newMain->R as $res){
             $data=$res->data;
-            
+            if($date===$date){
                $message=$res->workTime; 
                 sendMessage($token,$id,$message);
-           
+            }
         }
 
         break;

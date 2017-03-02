@@ -138,7 +138,7 @@ $x=']';
 
     $workTime=serialize($this->R);
     file_put_contents("doc/workTime.txt",$workTime,FILE_APPEND | LOCK_EX);
-    $x=file_get_contents("doc/workTime.txt");
+   
     
             $this->insertInfo($result, $db, $id);
 

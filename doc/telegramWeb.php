@@ -26,9 +26,6 @@ $date->format('Y-m-d H:i:s');
 
 
   
-  if($output['message']['text']==='checkout'){
-            $message=$firstName;
-            sendMessage($token,$id,$message);
        
 
 
@@ -45,11 +42,11 @@ switch($message){
         $message='Hello';
         sendMessage($token,$id,$message);
         break;
-   // case 'checkout':
-      //  $message= $wime;
+    case 'checkout':
+       $message= $firstName;
 
-      //  sendMessage($token,$id,$message);
-      //  break;
+       sendMessage($token,$id,$message);
+        break;
     case 'how are you?':
         $message='i am fine';
         sendMessage($token,$id,$message);

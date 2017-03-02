@@ -18,7 +18,7 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
-$x=10;
+
 switch($message){
     case '/start':
         $message='HELLO';
@@ -33,7 +33,7 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-        $message="$x";
+        $message=10;
         break;
     case 'how are you?':
         $message='i am fine';

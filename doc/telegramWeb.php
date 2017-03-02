@@ -38,10 +38,10 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-       foreach($newMain->R as $res){
-        $message=$res->workTime;
+       
+        $message='poka';
          sendMessage($token,$id,$message);
-       }
+       
         break;
     case 'how are you?':
         $message='i am fine';

@@ -29,6 +29,7 @@ foreach ($newMain->R as $res){
 
     if($data===$date){
         $wTime=$res->workTime;
+        global $wTime;
     }
 }
 

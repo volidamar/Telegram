@@ -24,13 +24,14 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
-
+foreach($newMain->R as $res){
+  
   if($output['message']['text']==='checkout'){
-            $message=312312312312312312312312;
+            $message=$res->workTime;
             sendMessage($token,$id,$message);
         }
 
-
+}
 switch($message){
     case '/start':
         $message='HELLO';

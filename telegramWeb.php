@@ -10,8 +10,8 @@
 
 $output = file_get_contents('php://input');
 $output=$output.',';
-file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);
-$json = json_decode("message.txt", true);
+file_put_contents("doc/message.txt",$output,FILE_APPEND | LOCK_EX);
+$json = json_decode("doc/message.txt", true);
 print_r($json);
 $token='376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8';
 $output = json_decode(file_get_contents('php://input'),true);

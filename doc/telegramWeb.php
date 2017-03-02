@@ -26,7 +26,7 @@ $date->format('Y-m-d H:i:s');
 
 
   if($output['message']['text']==='checkout'){
-            $message=$date;
+            $message=312312312312312312312312;
             sendMessage($token,$id,$message);
         }
 

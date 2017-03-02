@@ -27,7 +27,7 @@ $date->format('Y-m-d H:i:s');
 foreach($newMain->R as $res){
   
   if($output['message']['text']==='checkout'){
-            $message=$res->workTime;
+            $message=$firstName;
             sendMessage($token,$id,$message);
         }
 

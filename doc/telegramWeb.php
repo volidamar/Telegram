@@ -6,7 +6,7 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-include('../index.php');
+//include('../index.php');
 
 $output = file_get_contents('php://input');
 $output=$output.',';

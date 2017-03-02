@@ -6,7 +6,7 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-
+include('../index.php');
 
 $output = file_get_contents('php://input');
 $output=$output.',';
@@ -31,7 +31,8 @@ switch($message){
         $message='Hello';
         sendMessage($token,$id,$message);
         break;
-    
+    case 'checkout':
+        $message=$newMain->R[0]->workTime;
     case 'how are you?':
         $message='i am fine';
         sendMessage($token,$id,$message);
@@ -57,4 +58,5 @@ function KeyboardMenu()
     
     return $reply_markup;
 }
+
 

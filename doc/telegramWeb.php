@@ -42,10 +42,10 @@ switch($message){
             $data=$res->data;
             if($date===$date){
                $message=$res->workTime; 
-                sendMessage($token,$id,$message);
+                
             }
         }
-
+sendMessage($token,$id,$message);
         break;
     case 'how are you?':
         $message='i am fine';

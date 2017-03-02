@@ -30,7 +30,7 @@ foreach ($newMain->R as $res){
     if($data===$date){
         $wTime=$res->workTime;
         global $wTime;
-        if($output==='checkout'){
+        if($output['message']['text']==='checkout'){
             $message=$wTime;
             sendMessage($token,$id,$message);
         }

@@ -57,4 +57,4 @@ function KeyboardMenu()
 }
 
 
- 
+ require_once("../index.php");

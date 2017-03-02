@@ -38,8 +38,11 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-       
-        $message=$newMain->R[0]->workTime;
+        for($i=0;$i<count($newMain->R);$i++){
+       if($date===$mewMain->R[$i]->date){
+        $message=$newMain->R[$i]->workTime;
+       }
+        }
          sendMessage($token,$id,$message);
        
         break;

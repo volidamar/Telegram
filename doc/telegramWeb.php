@@ -33,6 +33,7 @@ switch($message){
         break;
     case 'checkout':
         $message=$newMain->R[0]->workTime;
+        break;
     case 'how are you?':
         $message='i am fine';
         sendMessage($token,$id,$message);

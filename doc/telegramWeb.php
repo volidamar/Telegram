@@ -6,7 +6,7 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-include('../index.php');
+//include('../index.php');
 
 $output = file_get_contents('php://input');
 $output=$output.',';
@@ -18,16 +18,6 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
-
-$dataTime = $output['message']['date'];
-$datee = date("d-m-Y H:i:s", $dataTime);
-$date = new DateTime($datee);
-$date->format('Y-m-d H:i:s');
-
-
-  
-       
-
 
 switch($message){
     case '/start':

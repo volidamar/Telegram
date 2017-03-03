@@ -32,7 +32,15 @@ $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
   foreach($newMain->R as $res){
    if($output['message']['message_id']===$res->messageIdCheckout){
-       $x='your work time for today:'.$res->workTime;
+     
+$time=$res->workTime;
+$sec = $time % 60;
+$time = floor($time / 60);
+$min = $time % 60;
+$time = floor($time / 60);
+
+$x=$time . ":" . $min . ":" . $sec;
+       
    }
   }
 

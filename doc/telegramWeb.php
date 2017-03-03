@@ -9,6 +9,7 @@
 include('../index.php');
 
 $output = file_get_contents('php://input');
+$messageId=$output['message']['message_id'];
 $output=$output.',';
 file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);
 $json = json_decode("message.txt", true);
@@ -38,8 +39,11 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout';      
-
-        $message=$newMain->R[1]->workTime;  
+foreach($newMain->R as $res){
+ if($res->messageIdCheckout==$messageId)
+ {$message=$res->workTime;
+ }
+}
            sendMessage($token,$id,$message);
 
         break;

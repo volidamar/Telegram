@@ -28,11 +28,11 @@ if($message=='checkout'){
     foreach($newMain->R as $res){
      if($messageId==$res->messageIdCheckout)
      {
-         $message=$res->workTime;
+         $lol=$res->workTime;
      }
     }
     
-      sendMessage($token,$id,$message);
+      sendMessage($token,$id,$lol);
 }
 switch($message){
     case '/start':

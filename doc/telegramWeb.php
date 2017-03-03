@@ -26,13 +26,10 @@ $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
     foreach($newMain->R as $res){
-     if($output['message']['message_id']===$res->messageIdCheckout)
-     {
-         $lol=11;
-         
-     }sendMessage($token,$id,$lol);
+     
+         $lol=$res->workTime;
     }
-    
+     sendMessage($token,$id,$lol);
       
 }
 switch($message){

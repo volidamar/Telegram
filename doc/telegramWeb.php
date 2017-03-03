@@ -28,7 +28,7 @@ $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
 
-foreach ($newMain->R as $res){
+foreach ($newMain->R as &$res){
     $lol[]=$res->workTime;
 }
 $str = implode(' ',$lol);

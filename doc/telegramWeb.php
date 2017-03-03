@@ -38,12 +38,12 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-        foreach($newMain->R as $i=>$res){
+        foreach($newMain->R as $res){
        
-        $message=$newMain->R[$i]->workTime;  
-           
+        $message=$res->workTime;  
+           sendMessage($token,$id,$message);
          }
-     sendMessage($token,$id,$message);
+     
      
          
        

@@ -7,7 +7,7 @@
  * Time: 2:10 PM
  */
 
-include('../index.php');
+
 $output = file_get_contents('php://input');
 $messageId=$output['message']['message_id'];
 $output=$output.',';

@@ -39,11 +39,11 @@ switch($message){
         break;
     case 'checkout':
         foreach($newMain->R as $i=>$res){
-       if($output['message']['message_id']==$newMain->R[$i]->messageIdCheckout){
+       
         $message=$newMain->R[$i]->workTime;  
-           sendMessage($token,$id,$message);
-       }
+           
          }
+     sendMessage($token,$id,$message);
      
          
        

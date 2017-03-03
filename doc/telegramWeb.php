@@ -25,8 +25,8 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
-   foreach($newMain->R as &$res){
-   $lol=$res->workTime;
+   foreach($newMain->R as $i=>$res){
+   $lol=$newMain->R[$i]->workTime;
     sendMessage($token,$id,$lol);
    }
    //$lol=$output['message']['message_id'];

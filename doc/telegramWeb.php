@@ -25,11 +25,11 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
-  
-      if($output['message']['message']===1133){
  
-   $lol=123456;}
-     sendMessage($token,$id,$lol);
+   $lol=$messageId;
+  sendMessage($token,$id,$lol);
+}
+     
       
 }
 switch($message){

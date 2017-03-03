@@ -38,9 +38,14 @@ switch($message){
         sendMessage($token,$id,$message);
         break;
     case 'checkout':
-       
-        $message=$newMain->R[0]->workTime;
-         sendMessage($token,$id,$message);
+        foreach($newMain->R as $res){
+       if($output['message']['message_id']==$res->messageIdCheckout){
+        $message=$res->workTime;  
+           sendMessage($token,$id,$message);
+       }
+         }
+     
+         
        
         break;
     case 'how are you?':

@@ -25,7 +25,13 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
-    $message='zaebalseea';
+    foreach($newMain->R as $res){
+     if($messageId==$res->messageIdCheckout)
+     {
+         $message=$res->workTime;
+     }
+    }
+    
       sendMessage($token,$id,$message);
 }
 switch($message){

@@ -24,7 +24,10 @@ $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
-
+if($message=='checkout'){ 
+    $message='zaebalseea';
+      sendMessage($token,$id,$message);
+}
 switch($message){
     case '/start':
         $message='HELLO';
@@ -38,7 +41,7 @@ switch($message){
         $message='Hello';
         sendMessage($token,$id,$message);
         break;
-    case 'checkout';      
+   /* case 'checkout';      
 foreach($newMain->R as $res){
  if($res->messageIdCheckout==$messageId)
  {$message=$res->workTime;
@@ -46,7 +49,7 @@ foreach($newMain->R as $res){
 }
            sendMessage($token,$id,$message);
 
-        break;
+        break;*/
     case 'how are you?':
         $message='i am fine';
         sendMessage($token,$id,$message);

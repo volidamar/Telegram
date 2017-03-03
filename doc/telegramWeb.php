@@ -30,7 +30,7 @@ $date->format('Y-m-d H:i:s');
 foreach ($newMain->R as &$res){
     $lol[$res->messageIdCheckout]=$res->workTime;
 }
-print_r($lol);
+
 if($message=='checkout'){ 
   
   $x=12313123;

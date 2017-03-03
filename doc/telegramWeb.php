@@ -35,7 +35,7 @@ $str = implode(' ',$lol);
 
 if($message=='checkout'){ 
   
-  $x=$str;
+  $x=count($lol);
     sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];

@@ -37,16 +37,11 @@ switch($message){
         $message='Hello';
         sendMessage($token,$id,$message);
         break;
-    case 'checkout':
-        foreach($newMain->R as $res){
-       
-        $message=$res->workTime;  
+    case 'checkout';      
+
+        $message=$newMain->R[1]->workTime;  
            sendMessage($token,$id,$message);
-         }
-     
-     
-         
-       
+
         break;
     case 'how are you?':
         $message='i am fine';

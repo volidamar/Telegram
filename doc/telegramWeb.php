@@ -28,9 +28,10 @@ if($message=='checkout'){
    for($i=0;$i<count($newMain->R);$i++){
 
     $lol=$newMain->R[$i]->workTime;  
-         sendMessage($token,$id,$lol);
+        
       
    }
+    sendMessage($token,$id,$lol);
    //$lol=$output['message']['message_id'];
  //  $lol=$newMain->R[0]->messageIdCheckout;
 

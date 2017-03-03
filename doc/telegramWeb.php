@@ -28,7 +28,7 @@ if($message=='checkout'){
     foreach($newMain->R as $res){
      if($messageId==$res->messageIdCheckout)
      {
-         $lol=$res->workTime;
+         $lol=11;
      }
     }
     

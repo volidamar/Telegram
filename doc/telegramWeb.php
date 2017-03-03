@@ -20,14 +20,20 @@ $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 
+
+
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
+
+foreach ($newMain->R as $res){
+    $lol[]=$res->workTime;
+}
 if($message=='checkout'){ 
   
-   $lol=$newMain->R[0]->messageIdCheckout;
-    sendMessage($token,$id,$lol);
+  $x=$message[1];
+    sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];
  //  $lol=$newMain->R[0]->messageIdCheckout;

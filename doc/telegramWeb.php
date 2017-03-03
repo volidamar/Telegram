@@ -24,7 +24,12 @@ $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
-
+if($message=='checkout'){ 
+   $lol=$messageId;
+  sendMessage($token,$id,$lol);
+}
+     
+  
 switch($message){
     case '/start':
         $message='HELLO';

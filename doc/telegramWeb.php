@@ -32,7 +32,7 @@ foreach ($newMain->R as &$res){
 }
 if($message=='checkout'){ 
   
-  $x=$lol[1];
+  $x=end($lol);
     sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];

@@ -28,8 +28,6 @@ $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
 
-$str = implode(' ',$lol);
-
 if($message=='checkout'){ 
   
   $x=$newMain->R[count($newMain->R]->workTime;

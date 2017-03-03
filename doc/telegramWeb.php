@@ -6,7 +6,7 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-include('../index.php');
+
 
 $output = file_get_contents('php://input');
 $messageId=$output['message']['message_id'];
@@ -19,7 +19,7 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
-
+include('../index.php');
 
 
 $dataTime = $output['message']['date'];

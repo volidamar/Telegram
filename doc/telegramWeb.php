@@ -25,7 +25,7 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
-   $lol=$messageId;
+   $lol=$output['message']['message_id'];
   sendMessage($token,$id,$lol);
 }
      

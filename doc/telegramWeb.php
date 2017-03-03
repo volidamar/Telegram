@@ -28,11 +28,12 @@ $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
 foreach ($newMain->R as &$res){
-    $lol[]=$res->workTime;
+    $lol[$res->messageIdCheckout]=$res->workTime;
 }
+print_r($lol);
 if($message=='checkout'){ 
   
-  $x=array_pop($lol);
+  $x=12313123;
     sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];

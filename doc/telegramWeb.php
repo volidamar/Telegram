@@ -30,7 +30,7 @@ $date->format('Y-m-d H:i:s');
 
 if($message=='checkout'){ 
   
-  $x=123;
+  $x=$newMain->R[count($newMain->R]->workTime;
     sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];

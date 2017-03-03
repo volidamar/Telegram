@@ -25,9 +25,15 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 if($message=='checkout'){ 
+   for($i=0;$i<count($newMain->R);$i++){
+      if($output['message']['message_id']===$newMain->R[$i]->messageIdCheckout){
+         $lol=12345;  
+         sendMessage($token,$id,$lol);
+      }
+   }
    //$lol=$output['message']['message_id'];
-   $lol=$newMain->R[0]->messageIdCheckout;
-  sendMessage($token,$id,$lol);
+ //  $lol=$newMain->R[0]->messageIdCheckout;
+
 }
      
   

@@ -29,8 +29,8 @@ if($message=='checkout'){
      if($output['message']['message_id']===$res->messageIdCheckout)
      {
          $lol=11;
-         sendMessage($token,$id,$lol);
-     }
+         
+     }sendMessage($token,$id,$lol);
     }
     
       

@@ -39,7 +39,7 @@ $time = floor($time / 60);
 $min = $time % 60;
 $time = floor($time / 60);
 
-$x='your work time for today:'.$time . ":" . $min . ":" . $sec;
+$x='your work time for today-'.$time . ":" . $min . ":" . $sec;
        
    }
   }

@@ -14,12 +14,12 @@ $output=$output.',';
 file_put_contents("message.txt",$output,FILE_APPEND | LOCK_EX);
 $json = json_decode("message.txt", true);
 $token='376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8';
-$output = json_decode(file_get_contents('php://input'),true);
+//$output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 
-include('../index.php');
+//include('../index.php');
 
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
@@ -28,7 +28,7 @@ $date->format('Y-m-d H:i:s');
 
 
 
-if($message=='checkout'){ 
+/*if($message=='checkout'){ 
   foreach($newMain->R as $res){
    if($output['message']['message_id']===$res->messageIdCheckout){
      
@@ -48,7 +48,7 @@ $x='your work time for today :' . $time . ":" . $min . ":" . $sec;
    //$lol=$output['message']['message_id'];
  //  $lol=$newMain->R[0]->messageIdCheckout;
 
-}
+}*/
      
   
 switch($message){

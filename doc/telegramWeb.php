@@ -28,7 +28,7 @@ $date->format('Y-m-d H:i:s');
 
 
 
-if($message=='checkout'){ 
+/*if($message=='checkout'){ 
   foreach($newMain->R as $res){
    if($output['message']['message_id']===$res->messageIdCheckout){
      
@@ -41,7 +41,7 @@ $time = floor($time / 60);
 $x='your work time for today :' . $time . ":" . $min . ":" . $sec;
        
    }
-  }
+  }*/
 
     sendMessage($token,$id,$x);
   

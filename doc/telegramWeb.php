@@ -21,14 +21,14 @@ $message=$output['message']['text'];
 
 include('../index.php');
 
-//$dataTime = $output['message']['date'];
-//$datee = date("d-m-Y H:i:s", $dataTime);
-//$date = new DateTime($datee);
-//$date->format('Y-m-d H:i:s');
+$dataTime = $output['message']['date'];
+$datee = date("d-m-Y H:i:s", $dataTime);
+$date = new DateTime($datee);
+$date->format('Y-m-d H:i:s');
 
 
 
-/*if($message=='checkout'){ 
+if($message=='checkout'){ 
   foreach($newMain->R as $res){
    if($output['message']['message_id']===$res->messageIdCheckout){
      
@@ -43,12 +43,12 @@ $x='your work time for today :' . $time . ":" . $min . ":" . $sec;
    }
   }
 
-  // sendMessage($token,$id,$x);
+   sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];
  //  $lol=$newMain->R[0]->messageIdCheckout;
 
-}*/
+}
      
   
 switch($message){

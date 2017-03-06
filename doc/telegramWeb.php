@@ -26,7 +26,12 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
-
+if($message=='users'){
+ foreach($newMain->onlineUsers as $res){
+$x=$res;
+    sendMessage($token,$id,$x);
+ }
+}
 
 if($message=='checkout'){ 
   foreach($newMain->R as $res){

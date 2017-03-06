@@ -19,7 +19,7 @@ $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 
-//include('../index.php');
+include('../index.php');
 
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
@@ -28,7 +28,7 @@ $date->format('Y-m-d H:i:s');
 
 
 
-/*if($message=='checkout'){ 
+if($message=='checkout'){ 
   foreach($newMain->R as $res){
    if($output['message']['message_id']===$res->messageIdCheckout){
      
@@ -41,9 +41,9 @@ $time = floor($time / 60);
 $x='your work time for today :' . $time . ":" . $min . ":" . $sec;
        
    }
-  }*/
+  }
 
-    //sendMessage($token,$id,$x);
+   sendMessage($token,$id,$x);
   
    //$lol=$output['message']['message_id'];
  //  $lol=$newMain->R[0]->messageIdCheckout;

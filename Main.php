@@ -24,9 +24,43 @@ class Main
     public $originalMessage;
     public $qwerty = [];
     public $R=[];
+   public $allUsers = [];
+    public $offUsers = [];
+    public $onlineUsers = [];
 
 
+    public function allUsers($json)
+    {
 
+        foreach ($json as $i => $res) {
+            $today = date("m.d.y-H:i:s", $res['message']['date']);
+            if ($res['message']['text'] === 'checkin') {
+
+                $this->allUsers[$today] = $res['message']['from']['first_name'] . ' ' . $res['message']['from']['last_name'];
+
+            }
+            if ($res['message']['text'] === 'checkout') {
+                $this->offUsers[$today] = $res['message']['from']['first_name'] . ' ' . $res['message']['from']['last_name'];
+            }
+        }
+    }
+
+
+    public function online()
+    {
+        $dateToday = date("m.d.y");
+        foreach ($this->allUsers as $key => $value) {
+
+            list($name) = explode('-', $key);
+            if ($name === $dateToday) {
+
+                $this->onlineUsers = array_diff($this->allUsers, $this->offUsers);
+            }
+
+        }
+
+
+    }
 
     public function run($filePath)
     {
@@ -50,7 +84,8 @@ $x=']';
         $rest=$t.$rest.$x;
         $json=json_decode($rest,true);
         //print_r($json);
-
+        $this->allUsers($json);
+        $this->online();
         /*$jsonData = file_get_contents($filePath, false, stream_context_create($arrContextOptions));
         $json = json_decode($jsonData, true);*/
         //file_get_contents("https://api.telegram.org/bot376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8/sendMessage?chat_id=222985371&text=pret Serii",false,stream_context_create($arrContextOptions));

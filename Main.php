@@ -24,8 +24,7 @@ class Main
     public $originalMessage;
     public $qwerty = [];
     public $R=[];
-    public $allUsers = [];
-    public $onlineUsers = [];
+ 
    
 
    
@@ -95,8 +94,7 @@ $x=']';
         }
         array_multisort($this->splitedByNames, SORT_STRING, $json);
         // print_r($this->splitedByNames);echo "<br/>";
-        $this->allUsers($json);
-
+        
         foreach ($json as $res) {
 
             $dataTime = $res['message']['date'];

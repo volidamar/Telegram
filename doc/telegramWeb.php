@@ -24,7 +24,7 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
-/*if($message=='checkout'){
+if($message=='checkout'){
     foreach($newMain->R as $res){
         if($output['message']['message_id']===$res->messageIdCheckout){
 
@@ -44,7 +44,7 @@ $date->format('Y-m-d H:i:s');
     $lol=$output['message']['message_id'];
     $lol=$newMain->R[0]->messageIdCheckout;
 
-}*/
+}
 
 
 switch($message){

@@ -41,8 +41,8 @@ if($message=='checkout'){
 
     sendMessage($token,$id,$x);
 
-    $lol=$output['message']['message_id'];
-    $lol=$newMain->R[0]->messageIdCheckout;
+   // $lol=$output['message']['message_id'];
+   // $lol=$newMain->R[0]->messageIdCheckout;
 
 }
 
@@ -93,4 +93,10 @@ function KeyboardMenu()
     $reply_markup = '&reply_markup=' . $keyboard . '';
 
     return $reply_markup;
+}
+if($message==='users'){
+ foreach($newMain->q as $res){
+     $x=$res;
+     sendMessage($token,$id,$x);
+ }
 }

@@ -7,7 +7,7 @@
  * Time: 2:10 PM
  */
 
-include('../index.php');
+
 $output = file_get_contents('php://input');
 $messageId=$output['message']['message_id'];
 $output=$output.',';
@@ -26,7 +26,7 @@ $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
-if($message=='checkout'){
+/*if($message=='checkout'){
     foreach($newMain->R as $res){
         if($output['message']['message_id']===$res->messageIdCheckout){
 
@@ -46,7 +46,7 @@ if($message=='checkout'){
     $lol=$output['message']['message_id'];
     $lol=$newMain->R[0]->messageIdCheckout;
 
-}
+}*/
 
 
 switch($message){

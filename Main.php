@@ -29,7 +29,7 @@ class Main
    
 
    
-    public function run($filePath)
+    public function run()
     {
 
         $d = null;

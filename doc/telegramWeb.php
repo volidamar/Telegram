@@ -19,7 +19,7 @@ $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 
-
+include('../index.php');
 
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
@@ -32,6 +32,29 @@ $date->format('Y-m-d H:i:s');
 //   sendMessage($token,$id,$x);
 // }
 //}
+
+if($message=='checkout'){
+    foreach($newMain->R as $res){
+        if($output['message']['message_id']===$res->messageIdCheckout){
+
+            $time=$res->workTime;
+            $sec = $time % 60;
+            $time = floor($time / 60);
+            $min = $time % 60;
+            $time = floor($time / 60);
+
+            $x='your work time for today :' . $time . ":" . $min . ":" . $sec;
+
+        }
+    }
+
+    sendMessage($token,$id,$x);
+
+    $lol=$output['message']['message_id'];
+    $lol=$newMain->R[0]->messageIdCheckout;
+
+}
+
 
 switch($message){
     case '/start':

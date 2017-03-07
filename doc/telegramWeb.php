@@ -18,20 +18,15 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
-//include('../index.php');
+
+
+include('../index.php');
 
 
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
-
-if($message=='users'){
- foreach($newMain->q as $res){
-$x=$res;
-   sendMessage($token,$id,$x);
- }
-}
 
 if($message=='checkout'){
     foreach($newMain->R as $res){

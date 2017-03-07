@@ -29,42 +29,10 @@ class Main
     public $offUsers = [];
     public $resumeUsers=[];
     public $onlineUsers = [];
-    public $checkin=[];
-    public $pause=[];
-    public $resume=[];
-    public $checkout=[];
-    public $q=[];
+   
 
     
-      public function allUsers($json)
-    {
-
-
-        foreach ($json as $i => $res) {
-            $today=date("m.d.y");
-            $date=date("m.d.y",$res['message']['date']);
-            if($today === $date){
-                $this->allUsers[]=array($res['message']['text']=>$res['message']['from']['first_name'] . ' ' . $res['message']['from']['last_name']);
-            }
-
-        }
-
-        foreach ($this->allUsers as $value) {
-            foreach ($value as $key => $res) {
-                if ($key === 'checkin') {
-                    $this->checkin[] = $res;
-                } elseif ($key === 'pause') {
-                    $this->pause[] = $res;
-                } elseif ($key === 'resume') {
-                    $this->resume[] = $res;
-                } elseif ($key === 'checkout') {
-                    $this->checkout[] = $res;
-                }
-            }
-        }
-    }
-
-   /* public function allUsers($json)
+    public function allUsers($json)
     {
 
         foreach ($json as $i => $res) {
@@ -78,10 +46,10 @@ class Main
                 $this->offUsers[$today] = $res['message']['from']['first_name'] . ' ' . $res['message']['from']['last_name'];
             }
         }
-    }*/
+    }
 
 
-  /*  public function online()
+    public function online()
     {
         $dateToday = date("m.d.y");
         foreach ($this->allUsers as $key => $value) {
@@ -95,7 +63,7 @@ class Main
         }
 
 
-    }*/
+    }
 
     public function run($filePath)
     {
@@ -167,11 +135,6 @@ $x=']';
         // print_r($this->splitedByNames);echo "<br/>";
         $this->allUsers($json);
 
-
-    $this->onlineUsers=array_diff($this->checkin,$this->pause);
-    $lol=array_diff($this->onlineUsers,$this->checkout);
-    $end=array_merge($lol,$this->resume);
-    $this->q=array_diff($end,$this->checkout);
         foreach ($json as $res) {
 
             $dataTime = $res['message']['date'];

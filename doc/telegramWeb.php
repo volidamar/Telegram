@@ -27,7 +27,7 @@ $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
 
 if($message=='users'){
- foreach($newMain->onlineUsers as $res){
+ foreach($newMain->q as $res){
 $x=$res;
     sendMessage($token,$id,$x);
  }

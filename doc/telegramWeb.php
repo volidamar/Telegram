@@ -19,7 +19,7 @@ $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 
-include('../index.php');
+
 
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);

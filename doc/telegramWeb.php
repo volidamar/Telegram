@@ -6,7 +6,7 @@
  * Date: 27.02.17
  * Time: 2:10 PM
  */
-
+include('../index.php');
 
 $output = file_get_contents('php://input');
 $messageId=$output['message']['message_id'];
@@ -20,7 +20,7 @@ $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 
 
-//include('../index.php');
+
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);

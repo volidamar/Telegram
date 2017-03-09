@@ -53,18 +53,6 @@ class Main
         $arr=unserialize(fread($handle,filesize('doc/input_ch_tm.txt')));
        //print_r($arr);
 
-
-foreach ($arr as $key=> $res){
-foreach($res as $key=>$value) {
-    if ($key == 'volidamar volidamar') {
-$this->a[]=$value;
-    }
-}
-}
-    }
-    
-    
-    
     
      public function allUsers($json)
     {

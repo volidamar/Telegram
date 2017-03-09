@@ -33,26 +33,6 @@ class Main
     public $resume=[];
     public $checkout=[];
     public $q=[];
-    public $lol=[];
-    public $a=[];
-    
-    
-    
-      public function addTimeWorkInFIle(){
-        foreach ($this->R as $res){
-            $date=$res->date;
-            $date->format('y-m-d h:i:s');
-
-          $this->lol[]=array($res->firstName.' '.$res->lastName=>$date->format('y-m-d').' - '.$res->workTime);
-        }
-
-        $handle=fopen('doc/input_ch_tm.txt','w');
-        fwrite($handle,serialize($this->lol));
-        fclose($handle);
-        $handle=fopen('doc/input_ch_tm.txt','r');
-        $arr=unserialize(fread($handle,filesize('doc/input_ch_tm.txt')));
-       //print_r($arr);
-
     
      public function allUsers($json)
     {

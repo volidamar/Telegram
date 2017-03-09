@@ -15,6 +15,7 @@ $token='376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8';
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
+$lastName=$output['message']['from']['last_name'];
 
 $message=$output['message']['text'];
 include('../index.php');
@@ -119,4 +120,22 @@ if($message==='users'){
      $x=$res;
      sendMessage($token,$id,$x);
  }
+}
+
+        $handle=fopen('input_ch_tm.txt','r');
+        $arr=unserialize(fread($handle,filesize('input_ch_tm.txt')));
+      
+
+if($message==='allTime'){
+foreach ($arr as $key=> $res){
+foreach($res as $key=>$value) {
+    if ($key == $firstName.' '.$lastName) {
+$a[]=$value;
+    }
+}
+}
+foreach ($a as $res){
+  $message=$res;
+     sendMessage($token,$id,$message);
+}
 }

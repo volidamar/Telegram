@@ -45,7 +45,27 @@ if($message=='checkout'){
    // $lol=$newMain->R[0]->messageIdCheckout;
 
 }
+if($message=='pause'){
+    foreach($newMain->R as $res){
+        if($output['message']['message_id']===$res->messageIdCheckout){
 
+            $time=$res->workTime;
+            $sec = $time % 60;
+            $time = floor($time / 60);
+            $min = $time % 60;
+            $time = floor($time / 60);
+
+            $x='your work time for today :' . $time . ":" . $min . ":" . $sec;
+
+        }
+    }
+
+    sendMessage($token,$id,$x);
+
+   // $lol=$output['message']['message_id'];
+   // $lol=$newMain->R[0]->messageIdCheckout;
+
+}
 
 switch($message){
     case '/start':

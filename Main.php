@@ -33,7 +33,6 @@ class Main
     public $resume=[];
     public $checkout=[];
     public $q=[];
-    
      public function allUsers($json)
     {
 

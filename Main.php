@@ -61,10 +61,7 @@ $this->a[]=$value;
     }
 }
 }
-foreach ($this->a as $res){
-    //print_r($res);
-    echo "<br/>";
-}
+
     }
     
     

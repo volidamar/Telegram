@@ -33,24 +33,8 @@ class Main
     public $resume=[];
     public $checkout=[];
     public $q=[];
-    public $lol=[];
-    public $a=[];
-    
-    public function addTimeWorkInFIle(){
-        foreach ($this->R as $res){
-            $date=$res->date;
-            $date->format('y-m-d h:i:s');
 
-          $this->lol[]=array($res->firstName.' '.$res->lastName=>$date->format('y-m-d').' - '.$res->workTime);
-        }
-
-        $handle=fopen('doc/input_ch_tm.txt','w');
-        fwrite($handle,serialize($this->lol));
-        fclose($handle);
-     
-    }
-    
-     public function allUsers($json)
+    public function allUsers($json)
     {
 
 
@@ -190,7 +174,6 @@ $this->q=array_diff($end,$this->checkout);
         }
         
         $this->R=$result;
-        $this->addTimeInFile();
             $this->insertInfo($result, $db, $id);
 
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");

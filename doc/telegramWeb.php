@@ -121,21 +121,3 @@ if($message==='users'){
      sendMessage($token,$id,$x);
  }
 }
-
-        $handle=fopen('input_ch_tm.txt','r');
-        $arr=unserialize(fread($handle,filesize('input_ch_tm.txt')));
-      
-
-if($message==='allTime'){
-foreach ($arr as $key=> $res){
-foreach($res as $key=>$value) {
-    if ($key == $firstName.' '.$lastName) {
-$a[]=$value;
-    }
-}
-}
-foreach ($a as $res){
-  $message=$res;
-     sendMessage($token,$id,$message);
-}
-}

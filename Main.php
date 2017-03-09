@@ -6,7 +6,7 @@
  * Date: 11/16/16
  * Time: 12:14 PM
  */
-//require_once("index.php");
+require_once("index.php");
 require_once("WorkDay.php");
 
 
@@ -33,6 +33,7 @@ class Main
     public $resume=[];
     public $checkout=[];
     public $q=[];
+    
      public function allUsers($json)
     {
 
@@ -173,8 +174,6 @@ $this->q=array_diff($end,$this->checkout);
         }
         
         $this->R=$result;
-        $this->addTimeWorkInFIle();     
-
             $this->insertInfo($result, $db, $id);
 
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");

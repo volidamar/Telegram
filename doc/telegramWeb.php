@@ -16,13 +16,18 @@ $json = json_decode("message.txt", true);
 $token='376579345:AAGKlvSF4khe_5X86TLlrYZKS_5bqSdRJf8';
 $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
-include('../index.php');
 $firstName=$output['message']['from']['first_name'];
 $message=$output['message']['text'];
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);
 $date = new DateTime($datee);
 $date->format('Y-m-d H:i:s');
+
+
+
+include('../index.php');
+
+
 
 if($message=='checkout'){
     foreach($newMain->R as $res){

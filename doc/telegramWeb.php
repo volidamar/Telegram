@@ -125,7 +125,7 @@ if($message==='status'){
   foreach($newMain->R as $res){
       $date=$res->date;
             $lMessage=$res->messages;
-            $lastM[$res->firstName]= end($lMessage).' '.$date->format('Y-m-d H:i:s');
+            $lastM[$res->firstName.' '.$res->lastName]= end($lMessage).' '.$date->format('Y-m-d H:i:s');
   }
     foreach ($lastM as $key=>$res){
         $x= $key.'-'.$res;

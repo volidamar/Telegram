@@ -116,12 +116,10 @@ function KeyboardMenu()
     return $reply_markup;
 }
 if($message==='users'){
- /*foreach($newMain->q as $res){
+ foreach($newMain->q as $res){
      $x=$res;
      sendMessage($token,$id,$x);
- }   */
+ }  
    
-        $status=1234;
-        sendMessage($token,$id,$status);
        
 }

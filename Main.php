@@ -35,6 +35,7 @@ class Main
     public $q=[];
    
 
+    
     public function allUsers($json)
     {
 
@@ -180,7 +181,6 @@ $this->q=array_diff($end,$this->checkout);
         $db->query("DELETE from `users` WHERE `users`.`id` not in (SELECT id FROM `t_temp`)");
         $db->disconnect();
     }
-
     public function insertInfo($result, $db)
     {
         foreach ($result as &$info) {

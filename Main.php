@@ -115,6 +115,11 @@ $x=']';
                 unset($json[$i]);
             }
         }
+          foreach ($json as $i => $value) {
+            if ($json[$i]['message']['text'] == 'status') {
+                unset($json[$i]);
+            }
+        }
         foreach ($json as $i => $value) {
             if ($json[$i]['message']['text'] == 'keyboard') {
                 unset($json[$i]);

@@ -13,7 +13,7 @@ class WorkDay
     /** @var DateTime */
     public $date;
     public $workTime = 0;
-    private $messages = array();
+    public $messages = array();
     public $messageId;
     public $firstName;
     public $lastName;

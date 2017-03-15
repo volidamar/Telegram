@@ -121,10 +121,3 @@ if($message==='users'){
      sendMessage($token,$id,$x);
  }       
 }
-if($message==='status'){
- foreach($newMain->R as $res){
-     $x=$res->messages;
-  
-     sendMessage($token,$id,$x);
- }       
-}

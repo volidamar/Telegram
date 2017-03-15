@@ -115,11 +115,11 @@ function KeyboardMenu()
 
     return $reply_markup;
 }
-if($message==='users'){
+/*if($message==='users'){
  foreach($newMain->q as $res){
      $x=$res;
      sendMessage($token,$id,$x);
  }  
-   
+   */
        
 }

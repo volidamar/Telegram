@@ -33,6 +33,8 @@ class Main
     public $resume=[];
     public $checkout=[];
     public $q=[];
+    public $lMessage=[];
+    public $lastM=[];
 
     public function allUsers($json)
     {
@@ -194,5 +196,16 @@ $this->q=array_diff($end,$this->checkout);
     {
         return $this->R;
     }
+     public function status(){
 
+        foreach ($this->R as $res){
+            $date=$res->date;
+            $this->lMessage=$res->messages;
+            $this->lastM[$res->firstName]= end($this->lMessage).' '.$date->format('Y-m-d H:i:s');
+
+        }
+        foreach ($this->lastM as $key=>$res){
+        $this->lastM= $key.'-'.$res;
+        }
+    }
 }

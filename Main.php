@@ -131,7 +131,7 @@ $x=']';
         array_multisort($this->splitedByNames, SORT_STRING, $json);
         // print_r($this->splitedByNames);echo "<br/>";
         $this->allUsers($json);
-        $this->status();
+       
 $this->onlineUsers=array_diff($this->checkin,$this->pause);
 $lol=array_diff($this->onlineUsers,$this->checkout);
 $end=array_merge($lol,$this->resume);
@@ -180,6 +180,7 @@ $this->q=array_diff($end,$this->checkout);
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");
         $db->query("DELETE from `users` WHERE `users`.`id` not in (SELECT id FROM `t_temp`)");
         $db->disconnect();
+         $this->status();
     }
 
     public function insertInfo($result, $db)

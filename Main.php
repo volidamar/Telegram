@@ -33,8 +33,7 @@ class Main
     public $resume=[];
     public $checkout=[];
     public $q=[];
-    public $lMessage=[];
-    public $lastM=[];
+   
 
     public function allUsers($json)
     {
@@ -180,7 +179,6 @@ $this->q=array_diff($end,$this->checkout);
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");
         $db->query("DELETE from `users` WHERE `users`.`id` not in (SELECT id FROM `t_temp`)");
         $db->disconnect();
-         //$this->status();
     }
 
     public function insertInfo($result, $db)
@@ -195,14 +193,5 @@ $this->q=array_diff($end,$this->checkout);
     public function getWorkTime()
     {
         return $this->R;
-    }
-     public function status(){
-
-        foreach ($this->R as $res){
-            $date=$res->date;
-            $this->lMessage=$res->messages;
-            $this->lastM[$res->firstName]= end($this->lMessage).' '.$date->format('Y-m-d H:i:s');
-
-        }     
-    }
+    }   
 }

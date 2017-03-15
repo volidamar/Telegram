@@ -203,9 +203,6 @@ $this->q=array_diff($end,$this->checkout);
             $this->lMessage=$res->messages;
             $this->lastM[$res->firstName]= end($this->lMessage).' '.$date->format('Y-m-d H:i:s');
 
-        }
-        foreach ($this->lastM as $key=>$res){
-        $this->lastM= $key.'-'.$res;
-        }
+        }     
     }
 }

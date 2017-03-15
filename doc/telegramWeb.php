@@ -124,3 +124,18 @@ function KeyboardMenu()
    
        
 //}
+
+
+
+if($message==='status'){
+   foreach ($newMain->R as $res){
+            $date=$res->date;
+            $lMessage=$res->messages;
+            $lastM[$res->firstName]= end($lMessage).' '.$date->format('Y-m-d H:i:s');
+
+        }
+        foreach ($lastM as $key=>$res){
+        $lastM= $key.'-'.$res;
+       sendMessage($token,$id,$lastM);
+        }  
+}

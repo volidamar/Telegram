@@ -176,6 +176,7 @@ $this->q=array_diff($end,$this->checkout);
         }
         
         $this->R=$result;
+        $this->status();
             $this->insertInfo($result, $db, $id);
 
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");

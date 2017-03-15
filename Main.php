@@ -131,8 +131,7 @@ $x=']';
         array_multisort($this->splitedByNames, SORT_STRING, $json);
         // print_r($this->splitedByNames);echo "<br/>";
         $this->allUsers($json);
-
-
+        $this->status();
 $this->onlineUsers=array_diff($this->checkin,$this->pause);
 $lol=array_diff($this->onlineUsers,$this->checkout);
 $end=array_merge($lol,$this->resume);

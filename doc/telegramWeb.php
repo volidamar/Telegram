@@ -18,7 +18,7 @@ $firstName=$output['message']['from']['first_name'];
 $lastName=$output['message']['from']['last_name'];
 
 $message=$output['message']['text'];
-include('../index.php');
+
 
 $dataTime = $output['message']['date'];
 $datee = date("d-m-Y H:i:s", $dataTime);

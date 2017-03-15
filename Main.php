@@ -180,7 +180,7 @@ $this->q=array_diff($end,$this->checkout);
         $db->query("CREATE TEMPORARY TABLE `t_temp`as (SELECT min(id) as id FROM `users` GROUP BY first_name,last_name)");
         $db->query("DELETE from `users` WHERE `users`.`id` not in (SELECT id FROM `t_temp`)");
         $db->disconnect();
-         $this->status();
+         //$this->status();
     }
 
     public function insertInfo($result, $db)

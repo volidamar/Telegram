@@ -122,8 +122,8 @@ if($message==='users'){
  }*/
     foreach ($newMain->lastM as $key=>$res){
         if($key===$firstName){
-        $lastMessage= $key.'-'.$res;
-             sendMessage($token,$id,$lastMessage);
+        $lastMessage= $key.'-'.$res;    
         }
+         sendMessage($token,$id,$lastMessage);
         }
 }

@@ -121,7 +121,7 @@ if($message==='users'){
      sendMessage($token,$id,$x);
  }       
 }
-if($message==='lol'){
+if($message==='status'){
   foreach($newMain->R as $res){
       $date=$res->date;
             $lMessage=$res->messages;

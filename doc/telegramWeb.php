@@ -121,3 +121,15 @@ if($message==='users'){
      sendMessage($token,$id,$x);
  }       
 }
+if($message==='lol'){
+  foreach($newMain->R as $res){
+      $date=$res->date;
+            $lMessage=$res->messages;
+            $lastM[$res->firstName]= end($lMessage).' '.$date->format('Y-m-d H:i:s');
+  }
+    foreach ($lastM as $key=>$res){
+        $x= $key.'-'.$res;
+        //print_r($this->lastM);
+        sendMessage($token,$id,$x);
+        }
+}

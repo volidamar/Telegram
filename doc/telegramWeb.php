@@ -16,7 +16,7 @@ $output = json_decode(file_get_contents('php://input'),true);
 $id = $output['message']['chat']['id'];
 $firstName=$output['message']['from']['first_name'];
 $lastName=$output['message']['from']['last_name'];
-//include('../index.php');
+include('../index.php');
 $message=$output['message']['text'];
 
 $dataTime = $output['message']['date'];

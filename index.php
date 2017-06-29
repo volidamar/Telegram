@@ -10,6 +10,5 @@ $filePath='https://api.telegram.org/bot329259730:AAEZ-xAi795aQ4BzODtIREBmSurZStD
 
    $newMain = new Main();
     $newMain->run();
-  
- 
+  echo 123;
     

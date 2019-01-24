@@ -1,5 +1,5 @@
 <?php
-    
+    echo 123;exit;
    require_once("Main.php");
     require_once("doc/Database.php");
     require_once ("doc/Database.php");
